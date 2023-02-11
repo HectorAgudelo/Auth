@@ -1,62 +1,99 @@
 import React, { FC } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container, Card, Image } from 'react-bootstrap';
 import styled from 'styled-components';
+import Img from '../terry-vlisidis-WsEbnsnKbUE-unsplash.jpg';
 
-const StyledButton = styled(Button)`
+const StyledContainer = styled(Container)`
 display: flex;
-flex-direction: row;
 justify-content: center;
-align-items: center;
-padding: 8px;
-gap: 8px;
-
-width: 402px;
-height: 40px;
-
-background: #343A40;
-border-radius: 8px;
-color: #ffffff;
-`
-
-const StyledFormContainer = styled(Form)`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+height: 100vh;
+width: 100vw;
 
 `;
 
-const StyledFormGroup = styled(Form.Group)``;
+const StyledButton = styled(Button)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 364px;
+  height: 40px;
+  background: #343a40;
+  border-radius: 8px;
+  color: #ffffff;
+ 
+`;
 
+const StyledFormContainer = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100vw;
+`;
 
+const StyledFormGroup = styled(Form.Group)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+`;
 
 const StyledFormControl = styled(Form.Control)`
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 8px;
-gap: 8px;
-margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  width: 345px;
+  height: 25px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  
+`;
 
-width: 382px;
-height: 25px;
+const StyledCard = styled(Card)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+  width: 30rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  position: relative;
+  top: 150px;
+ 
+`;
 
-border: 1px solid #CED4DA;
-border-radius: 8px;`;
+const StyledImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 100%;
+  z-index: -1;
 
-
+`;
 
 export const Login: FC = () => {
   return (
-    <StyledFormContainer>
-      <StyledFormGroup>
-        
-        <StyledFormControl type="password" placeholder="Password"/>
-        <StyledFormControl type="email" placeholder="Enter email"/>
-       
+    <StyledContainer>
+      <StyledImage src={Img} />
       
-      </StyledFormGroup>
-      <StyledButton>Login</StyledButton>
-    </StyledFormContainer>
+        <StyledCard>
+          <Card.Body>
+            <StyledFormContainer>
+              <StyledFormGroup>
+                <StyledFormControl type='password' placeholder='Password' />
+                <StyledFormControl type='email' placeholder='Enter email' />
+              </StyledFormGroup>
+              <StyledButton>Login</StyledButton>
+            </StyledFormContainer>
+          </Card.Body>
+        </StyledCard>
+      
+    </StyledContainer>
   );
 };
