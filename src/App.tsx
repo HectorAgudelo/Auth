@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import {Background} from './components/background/Background'
+import {Login} from './pages/Login'
+import {SignUp} from './pages/SignUp'
 
 function App() {
   return (
     <div className="App">
-    <Background/>
+        <Login/>
     </div>
   );
 }
