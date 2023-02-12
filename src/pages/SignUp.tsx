@@ -1,58 +1,32 @@
 import React, { FC } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
-import styled from 'styled-components';
-
-const StyledButton = styled(Button)`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px;
-  gap: 8px;
-
-  width: 402px;
-  height: 40px;
-
-  background: #343a40;
-  border-radius: 8px;
-  color: #ffffff;
-`;
-
-const StyledFormContainer = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const StyledFormGroup = styled(Form.Group)``;
-
-const StyledFormControl = styled(Form.Control)`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 8px;
-  gap: 8px;
-  margin: 20px;
-
-  width: 382px;
-  height: 25px;
-
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-`;
+import {
+  StyledContainer,
+  StyledImage,
+  StyledCard,
+  StyledFormGroup,
+  StyledFormContainer,
+  StyledButton,
+  StyledFormControl,
+} from '../components/Globals';
+import Img from '../terry-vlisidis-WsEbnsnKbUE-unsplash.jpg';
 
 export const SignUp: FC = () => {
   return (
-    <Container>
-      <StyledFormContainer>
-        <StyledFormGroup>
-          <StyledFormControl type='password' placeholder='Password' />
-          <StyledFormControl type='email' placeholder='Enter email' />
-          <StyledFormControl type='password' placeholder='Password' />
-        </StyledFormGroup>
-        <StyledButton>Sign Up</StyledButton>
-      </StyledFormContainer>
-    </Container>
+    <StyledContainer>
+      <StyledImage src={Img} />
+
+      <StyledCard>
+        <StyledCard.Body>
+          <StyledFormContainer>
+            <StyledFormGroup>
+              <StyledFormControl type='text' placeholder='Name' />
+              <StyledFormControl type='email' placeholder='Enter email' />
+              <StyledFormControl type='password' placeholder='Password' />
+            </StyledFormGroup>
+            <StyledButton>Login</StyledButton>
+          </StyledFormContainer>
+        </StyledCard.Body>
+      </StyledCard>
+    </StyledContainer>
   );
 };
