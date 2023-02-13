@@ -1,5 +1,8 @@
-export const config = {
-  firebaseConfig : {
+import  {initializeApp} from 'firebase/app'
+import {getAuth} from 'firebase/auth'
+
+
+  const firebaseConfig = {
   apiKey: "AIzaSyAhdPiovAeIBJYNtPNVHGo_PfqTnp5T6MU",
   authDomain: "authapp-209f6.firebaseapp.com",
   projectId: "authapp-209f6",
@@ -7,4 +10,8 @@ export const config = {
   messagingSenderId: "534138234478",
   appId: "1:534138234478:web:331843e9b992f4dbf8a87f"
 }
-};
+
+
+const app = initializeApp(firebaseConfig)
+
+export const auth = getAuth(app);
