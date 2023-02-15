@@ -9,6 +9,8 @@ import {
   StyledFormControl,
 } from '../components/Globals';
 import Img from '../terry-vlisidis-WsEbnsnKbUE-unsplash.jpg';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../config/config';
 
 
 export const SignUp: FC = () => {
@@ -18,7 +20,12 @@ export const SignUp: FC = () => {
 
   const register = (e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault()
-    console.log( name, password, email)
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>{
+      console.log(userCredential)
+    }).catch((error)=>{
+      console.log(error)
+    })
+    
   }
 
   return (
