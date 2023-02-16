@@ -61,7 +61,7 @@ export const SignUp: FC = () => {
                 }
               />
             </StyledFormGroup>
-            <StyledButton type='submit'>Login</StyledButton>
+            <StyledButton type='submit'>Sign Up</StyledButton>
           </StyledFormContainer>
         </StyledCard.Body>
       </StyledCard>
